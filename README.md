@@ -1,0 +1,1 @@
+Seyahat planlama&Rehber uygulamasi django ve python ile yapıldı 

@@ -1,0 +1,56 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block title %}services{% endblock title %}
+{% block continer %}
+<!-- services section start -->
+<section class="untree_co-section py-5 bg-light">
+ <div class="container">
+   <div class="row justify-content-center mb-5">
+     <div class="col-lg-12 text-center">
+       <!-- <h2 class="section-title mb-3">Özel Teklifler ve İndirimler</h2> -->
+       <p class="section-subtitle">gezmek istedğiniz yerleri keşf edin</p>
+       <div class="mb-4"></div>
+       <div class="input-group mb-3">
+         <input type="text" class="form-control" placeholder="Şehir Ara" aria-label="Şehir Ara" aria-describedby="button-addon2" id="city-search">
+         <button class="btn btn-primary" type="button" id="button-addon2">Ara</button>
+       </div>
+     </div>
+   </div>
+   <div class="row justify-content-center">
+     <div class="col-lg-4 mb-4" data-city="istanbul">
+       <div class="card border-0 text-center">
+         <img src="{% static "images/img-1.png" %}" class="card-img-top" alt="Resim">
+         <div class="card-body">
+           <h3 class="card-title"><a href="{% url "servicdatai" %}">Thun Gölü</a></h3>
+           <p class="card-text">Thun Gölü, İsviçre'nin merkezinde yer alan büyüleyici bir alp gölüdür. Kristal berraklığında suyu ve etrafındaki muhteşem doğal manzaralarıyla ünlüdür.</p>
+           <a href="{% url "servicdatai" %}" class="btn btn-primary"><i class="fas fa-map-marker-alt"></i> Rota Detayı</a>
+         </div>
+       </div>
+     </div>
+     <div class="col-lg-4 mb-4" data-city="barselona">
+       <div class="card border-0 text-center">
+         <img src="{% static "images/img-2.png" %}" class="card-img-top" alt="Resim">
+         <div class="card-body">
+           <h3 class="card-title"><a href="{% url "servicdatai" %}">Barcelona</a></h3>
+           <p class="card-text">Barcelona, İspanya'nın Katalonya bölgesinde yer alan bir şehirdir. Gaudi'nin eserleri ve Akdeniz'in eşsiz atmosferi ile ünlüdür.</p>
+           <a href="{% url "servicdatai" %}" class="btn btn-primary"><i class="fas fa-map-marker-alt"></i> Rota Detayı</a>
+           
+         </div>
+       </div>
+     </div>
+     <div class="col-lg-4 mb-4" data-city="kyoto">
+       <div class="card border-0 text-center">
+         <img src="{% static "images/img-3.png" %}" class="card-img-top" alt="Resim">
+         <div class="card-body">
+           <h3 class="card-title"><a href="{% url "servicdatai" %}">Kyoto</a></h3>
+           <p class="card-text">Kyoto, Japonya'nın bir şehridir. Geleneksel Japon kültürünün merkezi olarak bilinir ve tapınakları ile ünlüdür.</p>
+           <a href="{% url "servicdatai" %}" class="btn btn-primary"><i class="fas fa-map-marker-alt"></i> Rota Detayı</a>
+           
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</section>
+<!-- services section end -->
+{% endblock continer %}
