@@ -1,7 +1,16 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import  render
 
+from Sayahat.models import Service, ServiceDetail
 
+# def indexservic(request):
+  
+#   context=dict()
+#   context["indexpage"] = IndexPage.objects.all()
 def services(request):
-  return render(request,'services.html')
+  context=dict()
+  context["Servicepage"] = Service.objects.all()
+  return render(request,'services.html',context)
 def servicdatai(request):
-  return render(request,'servicesdetia.html')
+  context=dict()
+  context["ServiceDetailpage"] = ServiceDetail.objects.all()
+  return render(request,'servicesdetia.html',context)

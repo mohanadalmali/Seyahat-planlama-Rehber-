@@ -6,67 +6,70 @@
 <div class="about_section layout_padding">
   <div class="container-fluid">
     <div class="row">
+      {% for sed in ServiceDetailpage %}
       <div class="col-md-6">
         <div class="about_taital_main">
-          <h1 class="about_taital">rota başlığı</h1>
-          <p class="about_text">rota açıklamscadasdasdasdasd asdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            adssssssssssssssssssa parasdasdasda asd asda asdas ad asd asda sd as </p>
+          <h1 class="about_taital">{{sed.title}}</h1>
+          <p class="about_text">{{sed.description}}</p>
           <div class="button_container">
-            <a href="https://www.booking.com/city/jp/kyoto.html" target="_blank" class="btn btn-dark"><i class="fas fa-hotel"></i> Konaklama Yerleri</a>
-           <a href="https://tr.wikipedia.org/wiki/Kyoto" target="_blank" class="btn btn-secondary"><i class="fas fa-info-circle"></i> Şehir Hakkında Bilgi</a>
+            <a href="{{sed.link1_url}}" target="_blank" class="btn btn-dark"><i class="fas fa-hotel"></i>{{sed.link1_title}}</a>
+           <a href="{{sed.link2_url}}" target="_blank" class="btn btn-secondary"><i class="fas fa-info-circle"></i> {{sed.link2_title}}</a>
           </div>
         </div>
       </div>
       <div class="col-md-6 padding_right_0">
-        <div><img src="{% static "images/caption.jpg" %}" class="about_img"></div>
+        <div><img src="{{sed.image.url}}" class="about_img"></div>
       </div>
+      {% endfor %}
+
     </div>
   </div>
 </div>
 <div class="about_section layout_padding">
+  {% for sed2 in ServiceDetailpage %}
   <div class="container-fluid">
-    <h1 class="about_taital text-center">İstanbul Seyahatinizin Olmazsa Olmazları</h1>
+    <h1 class="about_taital text-center">{{sed2.main_title1}}</h1>
     <div class="row justify-content-center">
       <div class="col-md-4">
         <div class="about_item text-center">
-          <img src="{% static "images/caption.jpg" %}" alt="Aktivite Fotoğrafı 1" class="about_img">
-          <h2 class="about_subtaital">Aktivite 1</h2>
-          <p class="about_text">Aktivite 1 açıklaması... asdasdadsdsf
-            dasdasdasdasdasdasda
-            açıklamscadasdasdasdasd
-            asds
+          <img src="{{sed2.image1.url}}" alt="Aktivite Fotoğrafı 1" class="about_img">
+          <h2 class="about_subtaital">{{sed2.title1}} 1</h2>
+          <p class="about_text">{{sed2.description1}}
           </p>
         </div>
+        
       </div>
-      <div class="col-md-4">
+      <!-- <div class="col-md-4">
         <div class="about_item text-center">
           <img src="{% static "images/caption.jpg" %}" alt="Aktivite Fotoğrafı 2" class="about_img">
           <h2 class="about_subtaital">Aktivite 2</h2>
           <p class="about_text">Aktivite 2 açıklaması...</p>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="about_item text-center">
+      <div class="col-md-4"> -->
+        <!-- <div class="about_item text-center">
           <img src="{% static "images/caption.jpg" %}" alt="Aktivite Fotoğrafı 3" class="about_img">
           <h2 class="about_subtaital">Aktivite 3</h2>
           <p class="about_text">Aktivite 3 açıklaması...</p>
-        </div>
+        </div> -->
       </div>
     </div>
+    {% endfor %}
   </div>
 </div>
 <div class="about_section layout_padding">
+  {% for sed2 in ServiceDetailpage %}
   <div class="container-fluid">
-    <h1 class="about_taital text-center">İstanbul'da Popüler Aktiviteler</h1>
+    <h1 class="about_taital text-center">{{sed2.main_title2}}</h1>
     <div class="row justify-content-center">
       <div class="col-md-4">
         <div class="about_item text-center">
-          <img src="{% static "images/caption.jpg" %}" alt="Aktivite Fotoğrafı 1" class="about_img">
-          <h2 class="about_subtaital">Aktivite 1</h2>
-          <p class="about_text">Aktivite 1 açıklaması...</p>
+          <img src="{{sed2.image2.url}}" alt="Aktivite Fotoğrafı 1" class="about_img">
+          <h2 class="about_subtaital">{{sed2.title2}}</h2>
+          <p class="about_text">{{sed2.description2}}</p>
         </div>
       </div>
-      <div class="col-md-4">
+      <!-- <div class="col-md-4">
         <div class="about_item text-center">
           <img src="{% static "images/caption.jpg" %}" alt="Aktivite Fotoğrafı 2" class="about_img">
           <h2 class="about_subtaital">Aktivite 2</h2>
@@ -79,9 +82,10 @@
           <h2 class="about_subtaital">Aktivite 3</h2>
           <p class="about_text">Aktivite 3 açıklaması...</p>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
+  {% endfor %}
 </div>
 <!-- <div class="about_section layout_padding">
   <div class="container-fluid">
